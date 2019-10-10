@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="3" failures="0" time="3.519">
+  <testsuite name="myFunction" errors="0" failures="0" skipped="0" timestamp="2019-10-10T18:23:31" time="2.184" tests="3">
+    <testcase classname="myFunction get first" name="myFunction get first" time="0.005">
+    </testcase>
+    <testcase classname="myFunction get first (wrong)" name="myFunction get first (wrong)" time="0">
+    </testcase>
+    <testcase classname="myFunction default" name="myFunction default" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>

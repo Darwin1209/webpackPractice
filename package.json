@@ -1,12 +1,13 @@
 {
-  "name": "Sbor",
+  "name": "sbor",
   "version": "6.5.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx jest",
+    "test": "npx jest --coverage",
     "build": "npx webpack --config=./webpack.config.js",
-    "start": "npx cross-env NODE_ENV=development node ./scripts/start.js"
+    "start": "npx cross-env NODE_ENV=development node ./scripts/start.js",
+    "eslint": "npx eslint ./src"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "@babel/preset-env": "~7.6.3",
     "babel-loader": "~8.0.0",
     "babel-jest": "~24.9.0",
+    "babel-eslint": "8.2.3",
     "copy-webpack-plugin": "~4.6.0",
     "cross-env": "~6.0.3",
     "css-loader": "~3.2.0",
@@ -25,9 +27,34 @@
     "jest-junit": "8.0.0",
     "webpack": "^3.12.0",
     "webpack-bundle-analyzer": "~3.5.2",
-    "webpack-dev-middleware": "~2.0.6"
+    "webpack-dev-middleware": "~2.0.6",
+    "eslint": "4.19.0",
+    "eslint-config-standard": "~11.0.0",
+    "eslint-import-resolver-webpack": "0.11.1",
+    "eslint-plugin-import": "~2.18.2",
+    "eslint-plugin-node": "~10.0.0",
+    "eslint-plugin-promise": "~4.2.1",
+    "eslint-plugin-standard": "4.0.1"
   },
   "dependencies": {
     "lodash": "4.17.15"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "outputName": "reports/junit.xml"
+        }
+      ]
+    ],
+    "coverageDirectory": "<rootDir>/reports/coverage",
+    "coverageReporters": [
+      "html"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
   }
 }
